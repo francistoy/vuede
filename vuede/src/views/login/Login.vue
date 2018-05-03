@@ -9,7 +9,7 @@
         <el-input type="password" v-model="loginForm.password"></el-input>
       </el-form-item>
       <el-form-item label="记住密码" label-width="70px">
-        <el-switch v-model="rememberPass" active-color="#13ce66" class="rememberpass-switch"></el-switch>
+        <el-switch v-model="PasswordSave" active-color="#13ce66" class="password-save"></el-switch>
       </el-form-item>
       <el-form-item>
         <el-button class="login-button" type="primary" v-loading.fullscreen.lock="fullscreenLoading" element-loading-text="正在登录.." @click.native.prevent="handleLogin('loginForm')">立即登录</el-button>
@@ -23,7 +23,7 @@
     data() {
       return {
         fullscreenLoading: false,
-        rememberPass: true,
+        PasswordSave: true,
         loginForm: {
           account: '',
           password: '',
@@ -41,9 +41,6 @@
           }]
         }
       }
-    },
-    mounted: {
-
     },
     methods: {
       handleLogin: function (formname) {
